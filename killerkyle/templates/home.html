@@ -1,0 +1,102 @@
+{% extends "headers/header.html" %}
+
+{% block page_title%} Kyle G Peterson {% endblock%}
+
+{% block content %}
+
+<body>
+    {% include "headers/navbar.html" with  profileLink="#profile" contactLink="#contact" comments="#disqus_thread" philoLink="#philosophy"%}
+    
+    <div class="container-fluid">
+        <div class="row" id="profile">
+            
+            <img class="col-lg-4" src="{{STATIC_URL}}img/kyle-yoga.jpg" width="100%"></img>
+            <div class="col-lg-8">
+                <div class="container-fluid">
+                    <p class="text-left"><h3>The Instructor</h3></p>
+                    <p class="text-justify">Mount Assiniboine, also known as Assiniboine Mountain, is a mountain located on the Great Divide, on the British Columbia/Alberta border in Canada. At 3,618 m (11,870 ft), it is the highest peak in the Southern Continental Ranges of the Canadian Rockies. Due to Assiniboine's pyramidal shape, it has been unofficially named the "Matterhorn" of North America. Mt. Assiniboine rises nearly 1,525 m (5,003 ft) above Lake Magog. Mt. Assiniboine was named by George M. Dawson in 1885. When Dawson saw Mt. Assiniboine from Copper Mountain, he saw a plume of clouds trailing away from the top. This reminded him of the plumes of smoke emanating from the teepees of Assiniboine Indians.[1] Mt. Assiniboine lies on the border between Mount Assiniboine Provincial Park, in British Columbia, and Banff National Park, in Alberta.[3] The park does not have any roads and thus can only be reached by a six hour hike 27 km (17 mi), three hour bike ride (now disallowed to reduce human / grizzly encounters) or helicopter. The usual approach is via Bryant Creek. From Canmore follow the Smith-Dorien road to the Mount Shark parking lot. The trail is well signed. A helipad is also here.</p>
+                </div>
+            </div>
+        </div> <!-- END PROFILE -->
+        
+        <hr/>    
+    
+        <div class="row" id="philosophy">
+            <div class="col-lg-8">
+                <div class="container-fluid">
+                    <h3 class="text-left">The Philosophy</h3>
+                    <p class="text-justify">Philosophy of mind is a branch of philosophy that studies the nature of the mind, mental events, mental functions, mental properties, consciousness, and their relationship to the physical body, particularly the brain. The mind–body problem, i.e. the relationship of the mind to the body, is commonly seen as one key issue in philosophy of mind, although there are other issues concerning the nature of the mind that do not involve its relation to the physical body, such as how consciousness is possible and the nature of particular mental states.[2][3][4]
+
+Dualism and monism are the two major schools of thought that attempt to resolve the mind–body problem. Dualism can be traced back to Plato,[5] and the Sankhya and Yoga schools of Hindu philosophy,[6] but it was most precisely formulated by René Descartes in the 17th century.[7] Substance dualists argue that the mind is an independently existing substance, whereas property dualists maintain that the mind is a group of independent properties that emerge from and cannot be reduced to the brain, but that it is not a distinct substance.[8]
+                </div>
+            </div>
+            <img class="col-lg-4" src="{{STATIC_URL}}img/kyle-pow.jpg" width="100%"></img>
+        </div><!-- END PHILOSOPHY-->
+        
+        <hr/>
+        
+        <div class="contactWithImage">
+            <div class="container-fluid">
+                <div class="col-lg-8">
+                    <br><br>
+                    <blockquote>
+                        <address class="inline-block">
+                            <strong>Kyle G Peterson</strong><br/>
+                            Jackson phonee :<br/>
+                            <span class="glyphicon glyphicon-earphone"/>: 1 (555) 555-5555<br/>
+                            <a href="mailto:#">kyleEmail@email.com</a><br/>
+                            <small>For bookings or inquiries</small><br/>
+                        </address>
+                        Classes depending on availability,
+                        <br/>Contact <a href="http://www.jacksonhole.com">Jackson Hole</a> front desk for bookings
+                        <br/>
+                        <span class="glyphicon glyphicon-earphone" />: 1-888-DEEP-SNO<br/>
+                        <br/><br/>
+                            
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+
+        <hr/>
+        
+        <div class="container-fluid">
+            <div id="disqus_thread"></div>
+        </div>
+    
+    </div>    <!-- END MAIN CONTAINER -->    
+
+    <div class="footer">
+        <div class="container container-fluid">
+            
+            <br>
+            <div class="row">
+                <div class="col-lg-offset-3 col-lg-6">
+                    <p class="text-center">
+                        Stay up to date with Kyle and his wherabouts by following him on social media!
+                    </p>
+                </div>
+                <div class="col-lg-3 text-right">
+                    <a class="facebook" href="https://www.facebook.com/kyle.g.peterson.3">
+                    </a>
+                    &nbsp;
+                    <a class="instagram" href="http://instagram.com/bikeskiclimb">
+                    </a>
+                </div>
+                <br>
+            </div>
+        
+        <hr>
+            <footer>
+                <p><small>&copy; Kyle G Peterson 2014 | Design by <a href="mailto:sbergeron101@gmail.com">Sam</a></small></p>
+                <br><br>
+            </footer>
+            
+        </div>
+    </div>
+
+    
+</body>
+
+
+{% endblock %}

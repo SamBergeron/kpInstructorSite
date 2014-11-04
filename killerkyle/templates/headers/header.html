@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<!-- Le javascript -->
+<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />
+<script>
+    window.jQuery || document.write('&lt;script src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"&gt;&lt;\/script&gt;');
+</script>
+<!-- Bootstrap jQuery plugins compiled and minified -->
+<script src="{{ STATIC_URL }}js/bootstrap.min.js" />
+<script>
+    $(document).ready(function() {
+        $('.carousel').carousel({
+            interval: 4000
+        });
+    });
+
+    $(document).ready(function() {
+        $('.navbar li').click(function(e) {
+            $('.navbar li.active').removeClass('active');
+            var $this = $(this);
+            if (!$this.hasClass('active')) {
+                $this.addClass('active');
+            }
+            e.preventDefault();
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $(".modal").on('hidden.bs.modal', function(e) {
+            $iframe = $(this).find( "iframe" );
+            $iframe.attr("src", $iframe.attr("src"));    
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        var hashTagActive = "";
+        $(".scroll").click(function (event) {
+            if(hashTagActive != this.hash) { //this will prevent if the user click several times the same link to freeze the scroll.
+                event.preventDefault();
+                //calculate destination place
+                var dest = 0;
+                if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
+                    dest = $(document).height() - $(window).height();
+                } else {
+                    dest = $(this.hash).offset().top;
+                }
+                //go to destination
+                $('html,body').animate({
+                    scrollTop: dest
+                }, 2000, 'swing');
+                hashTagActive = this.hash;
+            }
+        });
+    });
+</script>
+    <!-- Facebook SDK for functions -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'skiwithkp'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+<head>
+    <!-- no link for now<link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico" type="image/x-icon"/> -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{% block page_title %}{% endblock %} | Ski Instructor</title>
+
+    <!-- Bootstrap -->
+    <link href="{{ STATIC_URL }}css/custom.css" rel="stylesheet" />
+    <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+    </style>
+</head>
+
+{% block content %}{% endblock %}
